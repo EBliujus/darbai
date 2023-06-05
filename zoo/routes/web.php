@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SpecieController as SC;
+use App\Http\Controllers\ManagerController as MC;
+use App\Http\Controllers\AnimalController as AC;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +23,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::prefix('species')->name('species-')->group(function () {
+    Route::get('/', [SC::class, 'index'])->name('index');
+    Route::get('/create', [SC::class, 'create'])->name('create');
+    Route::post('/create', [SC::class, 'store'])->name('store');
+    Route::get('/edit/{specie}', [SC::class, 'edit'])->name('edit');
+    Route::put('/edit/{specie}', [SC::class, 'update'])->name('update');
+    Route::delete('/delete/{specie}', [SC::class, 'destroy'])->name('delete');
+});
