@@ -6,7 +6,7 @@
         <div class="col-12">
             <div class="card mt-5">
                 <div class="card-header">
-                    <h1>Offer List</h1>
+                    <h1>Species List</h1>
                 </div>
                 <div class="card-body">
                     <ul class="list-group">
@@ -15,14 +15,14 @@
                             <div class="specie-line">
                                 <div class="specie-info">
                                     <h2>{{$specie->type}}</h2>
-                                    {{-- <div class="specie-description">
-                                        <p class="--random--color">{{$specie->season}}</p>
+                                   {{--  <div class="specie-description">
+                                        <p class="--random--color">{{$specie->type}}</p>
                                     </div> --}}
                                 </div>
                                 <div class="buttons">
                                     <a href="{{route('species-edit', $specie)}}" class="btn btn-outline-success">Edit</a>
                                     <form action="{{route('species-delete', $specie)}}" method="post">
-                                        <button type="submit" class="btn btn-outline-danger">delete</button>
+                                        <button type="submit" class="btn btn-outline-danger">Delete</button>
                                         @csrf
                                         @method('delete')
                                     </form>
