@@ -6,7 +6,7 @@
         <div class="col-8">
             <div class="card mt-5">
                 <div class="card-header">
-                    <h1>Add New Meniu</h1>
+                    <h1>Add New Dish</h1>
                 </div>
                 <div class="card-body">
                     <form action="{{route('dishes-store')}}" method="post">
@@ -23,6 +23,11 @@
                                 <div class="form-text">Description of the dish</div>
                             </div>
                         </div>
+                        <div class="col-12">
+                        <div class="mb-4">
+                            <label for="logo"> Add images </label>
+                            <input type="file" name="logo" />
+                        </div>
                         <div class="col-4 meniu-select">
                             <label class="form-label">Choose Meniu:</label>
                             <select class="form-select" name="restaurant_id" >
@@ -32,7 +37,8 @@
                                 @endforeach
                             </select>                     
                                 <button type="submit" class="btn btn-primary" style="margin-top: 10px">Submit</button>
-                        </div>  
+                        </div>
+                    </div>  
                     </form>
                 </div>
             </div>
