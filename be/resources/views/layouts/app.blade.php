@@ -74,12 +74,12 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" 
-                                href="{{ route('menius-index') }}"
+                                href="{{ route('dishes-index') }}"
                                 >
                                     Dishes list
                                 </a>
                                 <a class="dropdown-item" 
-                                href="{{ route('menius-create') }}"
+                                href="{{ route('dishes-create') }}"
                                 >
                                     Add Dish
                                 </a>
