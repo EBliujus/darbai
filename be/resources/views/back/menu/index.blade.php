@@ -6,18 +6,18 @@
         <div class="col-12">
             <div class="card mt-5">
                 <div class="card-header">
-                    <h1>Offer List</h1>
+                    <h1>Meniu List</h1>
                 </div>
                 <div class="card-body">
                     <ul class="list-group">
                         @forelse($menius as $meniu)
                         <li class="list-group-item">
-                            <div class="cat-line">
-                                <div class="cat-info">
-                                    <div style="display:flex; margin-right: 10px">
-                                        <h4 style="margin-right: 5px">{{$meniu->MeniubyRestaurant->name}} </h4>
+                            <div class="meniu-line">
+                                <div class="meniu-info">
+                                    <div>
+                                        <h4>{{$meniu->MeniubyRestaurant->name}} </h4>
                                     </div>
-                                <div class="cat-info">
+                                <div class="meniu-info">
                                     <h2>{{$meniu->title}}</h2>
                                 </div>
                                 <div class="buttons">

@@ -28,3 +28,33 @@
         flex-wrap: nowrap; /* Ensures buttons stay in one line */
     }
 }
+.meniu-line {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    .meniu-info {
+        display: flex;
+        justify-content: flex-end;
+        &>div {
+            display: flex;
+            margin-top: 7px;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+    }
+    .buttons {
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+        margin-left: auto;
+    }
+}
+
+
+
+
+
+
+

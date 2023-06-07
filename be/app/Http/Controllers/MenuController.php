@@ -65,7 +65,9 @@ class MenuController extends Controller
 
     public function destroy(Menu $menu)
     {
-        $meniu->delete();
-        return redirect()->route('menius-index');
+
+            $menu->delete();
+            return redirect()->route('menius-index');
+        
     }
 }

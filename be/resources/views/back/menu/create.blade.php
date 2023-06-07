@@ -16,7 +16,7 @@
                             <input type="text" class="form-control" name="title" value={{old('title')}}>
                             <div class="form-text">New meniu</div>
                         </div>
-                        <div class="col-4 specie-select">
+                        <div class="col-4 meniu-select">
                             <label class="form-label">Choose Restaurant:</label>
                             <select class="form-select" name="restaurant_id" >
                                 <option value="0">Restaurants list</option>
