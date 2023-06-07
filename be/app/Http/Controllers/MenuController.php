@@ -55,9 +55,9 @@ class MenuController extends Controller
 
     public function update(Request $request, Menu $menu)
     {
-        $meniu->title = $request->title;
-        $meniu->restaurant_id = $request->restaurant_id;
-        $meniu->save();
+        $menu->title = $request->title;
+        $menu->restaurant_id = $request->restaurant_id;
+        $menu->save();
 
         return redirect()->route('products-index');
     }
@@ -65,9 +65,7 @@ class MenuController extends Controller
 
     public function destroy(Menu $menu)
     {
-
-            $menu->delete();
+            $meniu->delete();
             return redirect()->route('menius-index');
-        
     }
 }
