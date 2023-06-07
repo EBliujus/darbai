@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RestaurantController as RC;
+use App\Http\Controllers\MenuController as MC;
+use App\Http\Controllers\DishController as DC;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +23,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::prefix('restaurants')->name('restaurants-')->group(function () {
+    Route::get('/', [RC::class, 'index'])->name('index');
+    Route::get('/create', [RC::class, 'create'])->name('create');
+    Route::post('/create', [RC::class, 'store'])->name('store');
+    Route::get('/edit/{restaurant}', [RC::class, 'edit'])->name('edit');
+    Route::put('/edit/{restaurant}', [RC::class, 'update'])->name('update');
+    Route::delete('/delete/{restaurant}', [RC::class, 'destroy'])->name('delete');
+});

@@ -3,65 +3,62 @@
 namespace App\Http\Controllers;
 
 use App\Models\Restaurant;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreRestaurantRequest;
-use App\Http\Requests\UpdateRestaurantRequest;
+
 
 class RestaurantController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
-        //
+        $restaurants = Restaurant::all();
+
+        return view('back.restaurant.index', [
+            'restaurants' => $restaurants
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+
     public function create()
     {
-        //
+        return view('back.restaurant.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreRestaurantRequest $request)
+
+    public function store(Request $request)
     {
-        //
+        Restaurant::create([
+            'name' => $request->name,
+            'code' => $request->code,
+            'address' => $request->address
+        ]);
+        return redirect()
+        ->route('restaurants-index');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Restaurant $restaurant)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Restaurant $restaurant)
     {
-        //
+        return view('back.restaurant.edit', [
+            'restaurant' => $restaurant
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateRestaurantRequest $request, Restaurant $restaurant)
+
+    public function update(Request $request, Restaurant $restaurant)
     {
-        //
+        $restaurant->update([
+            'name' => $request->name,
+            'code' => $request->code,
+            'address' => $request->address
+        ]);
+        return redirect()->route('restaurants-index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+
     public function destroy(Restaurant $restaurant)
     {
-        //
+        $restaurant->delete();
+        return redirect()->route('restaurants-index');
     }
 }
