@@ -15,11 +15,11 @@
                             <div class="restaurant-line">
                                 <div class="restaurant-info">
                                     <h2>{{$restaurant->name}}</h2>
-                                    <div class="restaurant-description">
-                                        <p class="">{{$restaurant->code}}</p>
+                                    <div>
+                                        <p class="code">{{$restaurant->code}}</p>
                                     </div>
-                                    <div class="restaurant-description">
-                                        <p class="">{{$restaurant->address}}</p>
+                                    <div>
+                                        <p class="address">{{$restaurant->address}}</p>
                                     </div>
                                 </div>
                                 <div class="buttons">

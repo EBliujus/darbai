@@ -1,2 +1,30 @@
 @import 'variables';
 @import 'bootstrap/scss/bootstrap';
+
+
+.restaurant-line {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    .restaurant-info {
+        display: flex;
+        justify-content: flex-end;
+        &>div {
+            display: flex;
+            margin-top: 7px;
+            justify-content: center;
+            align-items: center;
+            .code, .address {
+                margin-left: 10px;
+            }
+        }
+    }
+    .buttons {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: nowrap; /* Ensures buttons stay in one line */
+    }
+}
