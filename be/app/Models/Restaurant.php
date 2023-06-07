@@ -9,4 +9,9 @@ class Restaurant extends Model
 {
     use HasFactory;
     protected $fillable = ['name', 'code', 'address'];
+
+    public function meniu()
+    {
+        return $this->hasMany(Menu::class);
+    }
 }

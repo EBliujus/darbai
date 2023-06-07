@@ -32,3 +32,12 @@ Route::prefix('restaurants')->name('restaurants-')->group(function () {
     Route::put('/edit/{restaurant}', [RC::class, 'update'])->name('update');
     Route::delete('/delete/{restaurant}', [RC::class, 'destroy'])->name('delete');
 });
+
+Route::prefix('menius')->name('menius-')->group(function () {
+    Route::get('/', [MC::class, 'index'])->name('index');
+    Route::get('/create', [MC::class, 'create'])->name('create');
+    Route::post('/create', [MC::class, 'store'])->name('store');
+    Route::get('/edit/{meniu}', [MC::class, 'edit'])->name('edit');
+    Route::put('/edit/{meniu}', [MC::class, 'update'])->name('update');
+    Route::delete('/delete/{meniu}', [MC::class, 'destroy'])->name('delete');
+});

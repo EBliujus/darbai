@@ -3,65 +3,69 @@
 namespace App\Http\Controllers;
 
 use App\Models\Menu;
+use App\Models\Restaurant;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreMenuRequest;
-use App\Http\Requests\UpdateMenuRequest;
+
 
 class MenuController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
-        //
+        $menius = Menu::all();
+
+        return view('back.menu.index', [
+            'menius' => $menius
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+
     public function create()
     {
-        //
+        $restaurants = Restaurant::all();
+
+        return view('back.menu.create', [
+            'restaurants' => $restaurants
+        ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreMenuRequest $request)
+
+    public function store(Request $request)
     {
-        //
+        $meniu = new Menu;
+        $meniu->title = $request->title;
+        $meniu->restaurant_id = $request->restaurant_id;
+        $meniu->save();
+
+        return redirect()->route('menius-index');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Menu $menu)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Menu $menu)
     {
-        //
+        $restaurants = Restaurant::all();
+
+        return view('back.menu.edit', [
+            'meniu' => $meniu,
+            'restaurants' => $restaurants
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateMenuRequest $request, Menu $menu)
+
+    public function update(Request $request, Menu $menu)
     {
-        //
+        $meniu->title = $request->title;
+        $meniu->restaurant_id = $request->restaurant_id;
+        $meniu->save();
+
+        return redirect()->route('products-index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+
     public function destroy(Menu $menu)
     {
-        //
+        $meniu->delete();
+        return redirect()->route('menius-index');
     }
 }
