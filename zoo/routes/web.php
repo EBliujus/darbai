@@ -33,3 +33,12 @@ Route::prefix('species')->name('species-')->group(function () {
     Route::put('/edit/{specie}', [SC::class, 'update'])->name('update');
     Route::delete('/delete/{specie}', [SC::class, 'destroy'])->name('delete');
 });
+
+Route::prefix('managers')->name('managers-')->group(function () {
+    Route::get('/', [MC::class, 'index'])->name('index');
+    Route::get('/create', [MC::class, 'create'])->name('create');
+    Route::post('/create', [MC::class, 'store'])->name('store');
+    Route::get('/edit/{manager}', [MC::class, 'edit'])->name('edit');
+    Route::put('/edit/{manager}', [MC::class, 'update'])->name('update');
+    Route::delete('/delete/{manager}', [MC::class, 'destroy'])->name('delete');
+});

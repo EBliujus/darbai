@@ -12,7 +12,7 @@ class Specie extends Model
     protected $fillable = ['type'];
 
 
-    public function getManager()
+    public function getSpecie()
     {
         return $this->belongsTo(Manager::class, 'manager_id', 'id');
     }

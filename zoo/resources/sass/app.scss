@@ -19,5 +19,22 @@
     }
 }
 
+.specie-select {
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    .form-label{
+        justify-content: center;
+        align-items: center;
+    }
+    .form-select {
+        width: 150px;
+    }
+    .btn-primary {
+        margin-left: 450px;
+    }
+}
+
 
 
