@@ -14,4 +14,5 @@ class Menu extends Model
     {
          return $this->belongsTo(Restaurant::class, 'restaurant_id', 'id');
     }
+    
 }

@@ -14,7 +14,11 @@ class DishController extends Controller
 
     public function index()
     {
-        //
+        $dishes = Dish::all();
+
+        return view('back.dish.index', [
+            'dishes' => $dishes
+        ]);
     }
 
     public function create()
@@ -22,14 +26,15 @@ class DishController extends Controller
         $restaurants = Restaurant::all();
         $menus = Menu::all();
 
-        return view('back.dish.create', compact('restaurants', 'menus'));
+        return view('back.dish.create');
     }
 
 
     public function store(Request $request)
     {
-        //
+
     }
+    
 
 
     public function show(Dish $dish)

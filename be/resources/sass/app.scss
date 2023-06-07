@@ -36,12 +36,12 @@
     .meniu-info {
         display: flex;
         justify-content: flex-end;
+        gap: 15px;
         &>div {
             display: flex;
             margin-top: 7px;
             justify-content: space-between;
             align-items: center;
-
         }
     }
     .buttons {

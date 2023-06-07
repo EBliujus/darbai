@@ -1,44 +1,48 @@
 {{-- @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-8">
-                <div class="card mt-5">
-                    <div class="card-header">
-                        <h1>Edit Meniu</h1>
-                    </div>
-                    <div class="card-body">
-                        <form action="{{ route('menius-update', $meniu) }}" method="post">
-                            <div class="container">
-                                <div class="row ">
-                                    <div class="col-8">
-                                        <div class="mb-3">
-                                            <label class="form-label">Meniu name</label>
-                                            <input type="text" class="form-control" name="title" value="{{$meniu->title}}">
-                                            <div class="form-text">Edit meniu name</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <label class="form-label">Choose Restaurant</label>
-                                        <select class="form-select" name="restaurant_id" 
-                                            @foreach($restaurants as $restaurant)
-                                            <option value="{{$restaurant->id}}" @if ($meniu->restaurant_id == $restaurant->id) selected @endif>
-                                                {{$restaurant->name}}
-                                            </option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    <div class="col-12">
-                                        <button type="submit" class="btn btn-outline-info">Change</button>
-                                    </div>
-                                </div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-8">
+            <div class="card mt-5">
+                <div class="card-header">
+                    <h1>Add New Dish</h1>
+                </div>
+                <div class="card-body">
+                    <form action="{{route('dishes-update')}}" method="post">
+                        @csrf
+                        <div class="mb-3">
+                            <label class="form-label">Dish</label>
+                            <input type="text" class="form-control" name="name" value={{old('name')}}>
+                            <div class="form-text">New dish</div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mb-3">
+                                <label class="form-label">Description</label>
+                                <textarea type="text" rows="5" cols="40" class="form-control description-hotel" name="description"></textarea>
+                                <div class="form-text">Description of the dish</div>
                             </div>
-                            @csrf
-                        </form>
-                    </div>
+                        </div>
+                        <div class="col-12">
+                        <div class="mb-4">
+                            <label for="logo"> Add images </label>
+                            <input type="file" name="logo" />
+                        </div>
+                        <div class="col-4 meniu-select">
+                            <label class="form-label">Choose Meniu:</label>
+                            <select class="form-select" name="restaurant_id" >
+                                <option value="0">Meniu list</option>
+                                @foreach($menus as $menu)
+                                <option value="{{$menu->id}}">{{$menu->title}}</option>
+                                @endforeach
+                            </select>                     
+                                <button type="submit" class="btn btn-primary" style="margin-top: 10px">Submit</button>
+                        </div>
+                    </div>  
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+</div>
 @endsection --}}

@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Dish extends Model
 {
     use HasFactory;
+    protected $fillable = ['name', 'description', 'photo', 'meniu_id'];
+
+    public function  DishbyMeniu()
+    {
+         return $this->belongsTo(Menu::class, 'meniu_id', 'id');
+    }
 }
