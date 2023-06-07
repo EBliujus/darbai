@@ -32,7 +32,7 @@
                             <label class="form-label">Choose Meniu:</label>
                             <select class="form-select" name="restaurant_id" >
                                 <option value="0">Meniu list</option>
-                                {{-- @foreach($menius as $meniu)
+{{--                                  @foreach($menius as $meniu)
                                 <option value="{{$menu->id}}">{{$menu->title}}</option>
                                 @endforeach --}}
                             </select>                     
