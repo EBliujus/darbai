@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\cat;
+use App\Models\Menu;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StorecatRequest;
-use App\Http\Requests\UpdatecatRequest;
+use App\Http\Requests\StoreMenuRequest;
+use App\Http\Requests\UpdateMenuRequest;
 
-class CatController extends Controller
+class MenuController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -28,7 +28,7 @@ class CatController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorecatRequest $request)
+    public function store(StoreMenuRequest $request)
     {
         //
     }
@@ -36,7 +36,7 @@ class CatController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(cat $cat)
+    public function show(Menu $menu)
     {
         //
     }
@@ -44,7 +44,7 @@ class CatController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(cat $cat)
+    public function edit(Menu $menu)
     {
         //
     }
@@ -52,7 +52,7 @@ class CatController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatecatRequest $request, cat $cat)
+    public function update(UpdateMenuRequest $request, Menu $menu)
     {
         //
     }
@@ -60,7 +60,7 @@ class CatController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(cat $cat)
+    public function destroy(Menu $menu)
     {
         //
     }
